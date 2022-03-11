@@ -330,19 +330,26 @@
 // })
 
 //js class 类 属性的私有公有
-
+// 
 //  class Person {
 //     name = "halbt"//公共属性
 //     #age = 18//私有
 //     #weight = '100kg'
-
+// // 
 //     constructor(){//初始化构造器
 //       console.log(this.name,this.#age,this.#weight);
 //     }
+//       get name(){
+//           return this.name
+//       }
+//       set name(val){
+//         this.name = val 
+//       }
 // }
 
 // var grl = new Person() // 实例化类
-// console.log(grl.#age);
+// console.log(grl.name = "麻瓜") set
+// console.log(grl.name);get
 
 // Sybold 添加描述的description 获取描述
 // let s = Symbol('字符串描述')
@@ -407,9 +414,9 @@
 
 // Array.prototype.includes：用来检测数组中是否包含某个元素，返回布尔类型值
 
-const books = ['水浒传','西游记','三国演义','红楼梦']
-console.log(books.includes('西厢记'));//false
-console.log(books.includes('红楼梦'));//true
+// const books = ['水浒传','西游记','三国演义','红楼梦']
+// console.log(books.includes('西厢记'));//false
+// console.log(books.includes('红楼梦'));//true
 
 //es6引入方式
 //通用引入方式
@@ -422,19 +429,25 @@ console.log(books.includes('红楼梦'));//true
 
 //暴露语法汇总
 // 统一暴露
- const fun = ()=>{
-  console.log("语法");
-}
+//  const fun = ()=>{
+//   console.log("语法");
+// }
 
-const a = {
-  name:"乔峰",
-  age:12
-}
+// const a = {
+//   name:"乔峰",
+//   age:12
+// }
 //export {fun,a}
 //默认暴露
-export default function(){
-  console.log("我是默认导出的");
-}
+// export default function(){
+  // console.log("我是默认导出的");
+// }
+
+//1.Object.is 判断两个值是否完全相等
+//2.Object.assign 合并对象
+//3.Object.setPrototypeOf 设置原型对象 Object.getPrototypeof
+
+//数值扩展
 
 
 
