@@ -372,14 +372,39 @@
 // const obj2 = Object.keys(obj)//获取对象的所有键，返回一个数组
 // console.log(obj1);
 // console.log(obj2);
-
-console.log(JSON.stringify({name:'小王',age:12}));
-console.log(JSON.parse('{"name":"小王","age":12}'));
+// 
+// console.log(JSON.stringify({name:'小王',age:12}));
+// console.log(JSON.parse('{"name":"小王","age":12}'));
 // JSON.stringify()//对象转json字符串
 // JSON.parse()//json字符串转对象
 
+//js对象与数组的转换
 
+// var arr= [{name:'老王',age:"22"}] 
 
+// await async 表达式 可以让异步操作，变为同步操作
+//async 返回一个pramis 对象
+// Promise.resolve 相当于 new promise(resolve => resolve(x))
+
+ function getSomething() {
+  return new Promise((resolve,reject)=>{
+     setTimeout(() => { 
+          resolve ("小王")
+    }, 1000);
+  })
+}
+
+async function testAsync() {
+  return Promise.resolve("hello async");
+}
+
+async function test() {
+  const v1 = await getSomething();
+  const v2 = await testAsync();
+  console.log(v1, v2);
+}
+
+test();
 
 
 
