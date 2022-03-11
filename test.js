@@ -383,28 +383,58 @@
 // var arr= [{name:'老王',age:"22"}] 
 
 // await async 表达式 可以让异步操作，变为同步操作
-//async 返回一个pramis 对象
+//async 返回一个pramis 对象 
 // Promise.resolve 相当于 new promise(resolve => resolve(x))
+//这是一个异步的操作
+//  function getSomething() {
+//   return new Promise((resolve,reject)=>{
+//      setTimeout(() => { 
+//           resolve ("小王")
+//     }, 1000);
+//   })
+// }
 
- function getSomething() {
-  return new Promise((resolve,reject)=>{
-     setTimeout(() => { 
-          resolve ("小王")
-    }, 1000);
-  })
+// async function testAsync() {
+//   return Promise.resolve("hello async");
+// }
+
+// async function test() {
+//   const v1 = await getSomething();//等待定时器结束在执行
+//   const v2 = await testAsync();
+//   console.log(v1, v2);
+// }
+// test();
+
+// Array.prototype.includes：用来检测数组中是否包含某个元素，返回布尔类型值
+
+const books = ['水浒传','西游记','三国演义','红楼梦']
+console.log(books.includes('西厢记'));//false
+console.log(books.includes('红楼梦'));//true
+
+//es6引入方式
+//通用引入方式
+// import * as m1 from "./src/js/m1.js"
+//结构赋值的方式
+// import {test,test1} from "./src/js/m1.js"
+//直接引入
+// import m3 from "./src/js/m3.js"
+
+
+//暴露语法汇总
+// 统一暴露
+ const fun = ()=>{
+  console.log("语法");
 }
 
-async function testAsync() {
-  return Promise.resolve("hello async");
+const a = {
+  name:"乔峰",
+  age:12
 }
-
-async function test() {
-  const v1 = await getSomething();
-  const v2 = await testAsync();
-  console.log(v1, v2);
+//export {fun,a}
+//默认暴露
+export default function(){
+  console.log("我是默认导出的");
 }
-
-test();
 
 
 
