@@ -31,7 +31,7 @@
 // Object.defineProperty(obj ,"newKey" ,{
 //   value:'hello',
 //   writable:false
-// });https://github.com/cuiyinzhen/test.git
+// });
 // obj.newKey = "word"
 // console.log(obj.newKey)
 
@@ -331,16 +331,55 @@
 
 //js class 类 属性的私有公有
 
- class Person {
-    name = "halbt"//公共属性
-    #age = 18//私有
-    #weight = '100kg'
+//  class Person {
+//     name = "halbt"//公共属性
+//     #age = 18//私有
+//     #weight = '100kg'
 
-    constructor(name,age,weight){//初始化构造器
-      console.log(this.name,this.#age,this.#weight);
-    }
-}
+//     constructor(){//初始化构造器
+//       console.log(this.name,this.#age,this.#weight);
+//     }
+// }
 
-var grl = new Person() // 实例化类
+// var grl = new Person() // 实例化类
 // console.log(grl.#age);
+
+// Sybold 添加描述的description 获取描述
+// let s = Symbol('字符串描述')
+// console.log(s.description);
+
+//数组方法flat 降低数组维度
+
+// var arr= [[1,1,2],[1],[3,4,[4,3,4]]]
+
+// const arr2 = arr.flat(2)
+// console.log(arr2);
+
+//字符串扩展方法
+// let str = ' asd '
+//清空头部空格
+// console.log(str.trimStart());
+//清除尾部空格
+// console.log(str.trimEnd());
+
+//对象扩展方法
+// const obj = {
+  // name:['哈利波特','邓布利肯'],
+  // age:[23,113,],
+  // Profession:['法师','校长']
+// }
+// const obj1 = Object.values(obj)//获取对象的所有值，返回一个数组
+// const obj2 = Object.keys(obj)//获取对象的所有键，返回一个数组
+// console.log(obj1);
+// console.log(obj2);
+
+console.log(JSON.stringify({name:'小王',age:12}));
+console.log(JSON.parse('{"name":"小王","age":12}'));
+// JSON.stringify()//对象转json字符串
+// JSON.parse()//json字符串转对象
+
+
+
+
+
 
