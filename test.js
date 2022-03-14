@@ -518,9 +518,59 @@
 // console.log(fun("李华"));
 
 //函数也可以使用解构赋值传参
+//要是用解构赋值，参数必须加上{}
+// const fun = ({name,age,height,KG=100})=>{
+//     console.log(name+age+height+KG)
+// }
 
-let fun = ()=>{
+//   fun({
+//     name:"tome",
+//     height:'180',
+//     age:'12'
+//   })
 
+// rest参数 也叫剩余参数 一般放在参数最后面 也可以再函数内对rest参数重新赋值
+  // const fun = (a,...args)=>{
+    // args = 1
+      // console.log(a,args);
+  // }
+
+  // fun(1,2,3,5)//1  1
+const A = [1,2,3]
+const B = [4,5,6]
+  // 数组合并
+// const C = [...A,...B];
+// console.log(C);
+//数组克隆
+const D = [...A] ;
+console.log(D);
+
+//伪数组，就是像数组一样有 length 属性，也有 0、1、2、3 等属性的对象，看起来就像数组一样，但不是数组，比如
+var fakeArray = {
+  length: 3,
+  "0": "first",
+  "1": "second",
+  "2": "third"
+};
+
+// <***===扩展运算符,也可以用来展开对象和字符串等, 方法与数组类似
+// 值得注意的是, 扩展运算符在拷贝对象时为部分只有第一层是深拷贝其他层级为浅拷贝===***>
+
+//ts class 的继承和修饰符
+// 1、ts中class 定义使用关键字 class （定义一个类）extends（继承父类） super（重写父类方法）
+// 2、子类方法名和父类方法名相同表示重写父类，不同表示继承
+// 3、ts类中修饰符为三种 public 公有（默认）、protected 
+
+class person {
+  constructor(brand, price) {
+    this.brand = brand
+    this.price = price
+  }
+
+  call() {
+    console.log('我可以打电话')
+  }
 }
 
-
+let a = new person('1+', 1999)
+console.log(a) //person { brand: '1+', price: 1999 }
