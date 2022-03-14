@@ -449,5 +449,78 @@
 
 //数值扩展
 
+//对象的简化写法
+// es6允许在大括号中直接写入变量和函数，作为对象的属性和方法，这样的书写更加简介
+
+// let testname = "伏地魔"
+// let Profession = function(){
+//   console.log("黑魔法师");
+// }   
+
+// const obj = {
+//   testname,
+//   Profession,
+//   age(){
+//     console.log(200);
+//   }
+// }
+// console.log(obj);
+
+//模板字符串
+// 采用``的形式定义字符串
+
+//变量拼接
+// let string = "我是一个" 
+  
+// console.log(`${string}模板`,typeof string);
+
+//解构赋值es6允许按照一定模式从数组和对象中提取，对变量进行赋值，这被称为解构赋值
+// 数组解构
+// const arrName = ['郭靖','黄蓉','杨康','杨过','小龙女']
+
+// const [a,b,c,d] = arrName
+
+// console.log(a,b,c,d);
+//对象解构赋值
+// let obj = {
+//   name:'张三',
+//   age:18,
+//   fun(){
+//     console.log('条件');    
+//   }
+// }
+// const {name,age,fun} = obj
+// console.log(name,age,fun);
+
+//箭头函数 
+//箭头函数不会创建自己的this ，并始终指向上一层
+  //  var name = "教育"
+  //      function fun(){
+  //       console.log(this.name);
+  //     }
+
+  //     const fun1 = () => {
+  //       console.log(this.name);
+      // }
+      
+// fun();
+// fun1()
+//箭头函数不能构造实例化对象
+// let fun = (name,age)=>{
+  // console.log(name,age);
+// }
+
+// var a = new fun("哈利波特",22)//err
+//可以省略括号当形参只有一个，的时候可以省略括号
+//当代码只有一句话时可以了省略大括号，并且return 也必须省略（函数的隐试返回）
+// const fun = name => name = "哈利波特"
+
+// console.log(fun("李华"));
+
+//函数也可以使用解构赋值传参
+
+let fun = ()=>{
+
+}
 
 
