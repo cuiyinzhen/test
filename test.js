@@ -624,6 +624,41 @@ const debounce = function(fun,delay){
 //   four
 // }
 //初始化为赋值的时候取上一个枚举的值+1
-NumEnum2.two//11
-NumEnum2.four//21
+// NumEnum2.two//11
+// NumEnum2.four//21
+
+//vue 过滤器
+// Vue.js 允许你自定义过滤器，可被用于一些常见的文本格式化。
+// 过滤器可以用在两个地方：双花括号插值和 v-bind 表达式 (后者从 2.1.0+ 开始支持)。
+// 过滤器应该被添加在 JavaScript 表达式的尾部，由“管道”符号指示：
+// 使用 在双大括号中使用 
+{{message | capitalize}}
+<div v-bind:id = 'rawId | formatId'></div>
+
+// 你可以在一个组件的选项中定义本地的过滤器：
+
+// filters: {
+//   capitalize: function (value) {
+//     if (!value) return ''
+//     value = value.toString()
+//     return value.charAt(0).toUpperCase() + value.slice(1)
+//   }
+// }
+
+// 全局过滤器
+// 当全局过滤器和局部过滤器重名时，会采用局部过滤器。
+// Vue.filter('capitalize', function (value) {
+//   if (!value) return ''
+//   value = value.toString()
+//   return value.charAt(0).toUpperCase() + value.slice(1)
+// })
+
+// new Vue({
+//   // ...
+// })
+// 过滤器可以串联 message的值会传入filterA中A的值回会传入filterB中
+// {{ message | filterA | filterB }}
+// 过滤器是 JavaScript 函数，因此可以接收参数：
+// {{ message | filterA('arg1', arg2) }}
+
 
