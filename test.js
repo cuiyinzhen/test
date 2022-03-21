@@ -536,22 +536,22 @@
   // }
 
   // fun(1,2,3,5)//1  1
-const A = [1,2,3]
-const B = [4,5,6]
+// const A = [1,2,3]
+// const B = [4,5,6]
   // 数组合并
 // const C = [...A,...B];
 // console.log(C);
 //数组克隆
-const D = [...A] ;
-console.log(D);
+// const D = [...A] ;
+// console.log(D);
 
 //伪数组，就是像数组一样有 length 属性，也有 0、1、2、3 等属性的对象，看起来就像数组一样，但不是数组，比如
-var fakeArray = {
-  length: 3,
-  "0": "first",
-  "1": "second",
-  "2": "third"
-};
+// var fakeArray = {
+//   length: 3,
+//   "0": "first",
+//   "1": "second",
+//   "2": "third"
+// };
 
 // <***===扩展运算符,也可以用来展开对象和字符串等, 方法与数组类似
 // 值得注意的是, 扩展运算符在拷贝对象时为部分只有第一层是深拷贝其他层级为浅拷贝===***>
@@ -561,16 +561,49 @@ var fakeArray = {
 // 2、子类方法名和父类方法名相同表示重写父类，不同表示继承
 // 3、ts类中修饰符为三种 public 公有（默认）、protected 
 
-class person {
-  constructor(brand, price) {
-    this.brand = brand
-    this.price = price
-  }
+// class person {
+//   constructor(brand, price) {
+//     this.brand = brand
+//     this.price = price
+//   }
 
-  call() {
-    console.log('我可以打电话')
+//   call() {
+//     console.log('我可以打电话')
+//   }
+// }
+
+// let a = new person('1+', 1999)
+// console.log(a) //person { brand: '1+', price: 1999 }
+
+// Map集合
+// es6提供的Map数据结构
+// let m = new Map()
+// m.set('name','ran')
+
+
+// 防抖
+const douc = function(fn,delay){
+  let val = null //借助闭包
+  return ()=>{ 
+      if(val){
+        clearTimeout(val)
+      }
+      val = setTimeout(fn,delay)
   }
 }
 
-let a = new person('1+', 1999)
-console.log(a) //person { brand: '1+', price: 1999 }
+//防抖
+const debounce = function(fun,delay){
+  var val = true
+  return ()=>{
+    if(!val){
+     return false
+      }
+    }
+    val = false
+    setTimeout(() =>{
+      fun()
+      val = true
+    },delay)
+
+}
