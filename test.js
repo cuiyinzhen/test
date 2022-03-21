@@ -581,32 +581,32 @@
 // m.set('name','ran')
 
 
-// 防抖
-const douc = function(fn,delay){
-  let val = null //借助闭包
-  return ()=>{ 
-      if(val){
-        clearTimeout(val)
-      }
-      val = setTimeout(fn,delay)
-  }
-}
+// // 防抖
+// const douc = function(fn,delay){
+//   let val = null //借助闭包
+//   return ()=>{ 
+//       if(val){
+//         clearTimeout(val)
+//       }
+//       val = setTimeout(fn,delay)
+//   }
+// }
 
-//防抖
-const debounce = function(fun,delay){
-  var val = true
-  return ()=>{
-    if(!val){
-     return false
-      }
-    }
-    val = false
-    setTimeout(() =>{
-      fun()
-      val = true
-    },delay)
+// //防抖
+// const debounce = function(fun,delay){
+//   var val = true
+//   return ()=>{
+//     if(!val){
+//      return false
+//       }
+//     }
+//     val = false
+//     setTimeout(() =>{
+//       fun()
+//       val = true
+//     },delay)
 
-}
+// }
 
 // 枚举类型
 //数字枚举，字符串枚举
@@ -632,8 +632,8 @@ const debounce = function(fun,delay){
 // 过滤器可以用在两个地方：双花括号插值和 v-bind 表达式 (后者从 2.1.0+ 开始支持)。
 // 过滤器应该被添加在 JavaScript 表达式的尾部，由“管道”符号指示：
 // 使用 在双大括号中使用 
-{{message | capitalize}}
-<div v-bind:id = 'rawId | formatId'></div>
+// {{message | capitalize}}
+{/* <div v-bind:id = 'rawId | formatId'></div> */}
 
 // 你可以在一个组件的选项中定义本地的过滤器：
 
@@ -656,7 +656,8 @@ const debounce = function(fun,delay){
 // new Vue({
 //   // ...
 // })
-// 过滤器可以串联 message的值会传入filterA中A的值回会传入filterB中
+// 过滤器可以串联 message的值会传入filterA中A的值回会
+// 传入filterB中
 // {{ message | filterA | filterB }}
 // 过滤器是 JavaScript 函数，因此可以接收参数：
 // {{ message | filterA('arg1', arg2) }}
