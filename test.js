@@ -607,3 +607,23 @@ const debounce = function(fun,delay){
     },delay)
 
 }
+
+// 枚举类型
+//数字枚举，字符串枚举
+// 枚举的声明
+// 数字枚举的声明可以分为两大类，带有初始化器和不带初始化器
+// 不带初始化器，枚举成员默认冲零开始，依次递增;
+// enum NumEnuml {one,two}
+// NumEnuml.one//0
+// NumEnuml.two//1
+
+// enum NumEnum2 {
+//   one = 10,
+//   two,
+//   three = 20,
+//   four
+// }
+//初始化为赋值的时候取上一个枚举的值+1
+NumEnum2.two//11
+NumEnum2.four//21
+
