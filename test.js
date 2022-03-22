@@ -658,6 +658,6 @@
 // 传入filterB中
 // {{ message | filterA | filterB }}
 // 过滤器是 JavaScript 函数，因此可以接收参数：
-// {{ message | filterA('arg1', arg2) }}
-  
+// {{ message | filterA('arg1', arg2) }} 
 
+//over
