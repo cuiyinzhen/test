@@ -659,6 +659,5 @@
 // {{ message | filterA | filterB }}
 // 过滤器是 JavaScript 函数，因此可以接收参数：
 // {{ message | filterA('arg1', arg2) }}
-//我已经更改了
-//  
+  
 
