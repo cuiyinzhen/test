@@ -1,4 +1,3 @@
-
 //冒泡排序
 // var arr = [3, 4, 1, 2];
 // function bubbleSort (arr) {
@@ -10,7 +9,7 @@
 //           var temp = arr[i];
 //           arr[i] = arr[i + 1];
 //           arr[i + 1] = temp;
-            // [arr[i],arr[i++]] = [arr[i++],arr[i]]
+// [arr[i],arr[i++]] = [arr[i++],arr[i]]
 //           c= false
 //         }
 //       }
@@ -22,7 +21,7 @@
 //   }
 //   bubbleSort(arr);
 //   console.log(bubbleSort(arr));
-  
+
 //defineProperty 使用
 // var obj ={}
 
@@ -149,11 +148,11 @@
 //  },[])
 //  console.log(arrFun);
 
- //二维数组转换为一维数组
+//二维数组转换为一维数组
 // let arr = [[1,2],[3,4],[4,5],[5,6],[6,7]]
 
 // const newArr = arr.reduce((pre,cur) =>{
-  // return pre.concat(cur)
+// return pre.concat(cur)
 // },[])
 
 //数组闭包的理解
@@ -223,24 +222,24 @@
 //   console.log(
 //   blackCat.say.call(whiteDog))
 
-  //promise 利用promise可以将异步操作以同步操作的流程表达出来，避免了层层嵌套的回调函数。此外，promise对象提供统一的接口，使得控制异步操作更加容易。
+//promise 利用promise可以将异步操作以同步操作的流程表达出来，避免了层层嵌套的回调函数。此外，promise对象提供统一的接口，使得控制异步操作更加容易。
 
-  // var promise = new Promise(function(resolve,reject){
-  //   resolve(2)
-  // })
+// var promise = new Promise(function(resolve,reject){
+//   resolve(2)
+// })
 
-  // promise.then(
-  //         res => {
-  //           return res*2
-  //         })
-  //         .then((res) => {
-  //           console.log(res);
-  //           return Promise.resolve('aassa')
-  //         }).then((res) => {
-  //           console.log(res);
-  // });
+// promise.then(
+//         res => {
+//           return res*2
+//         })
+//         .then((res) => {
+//           console.log(res);
+//           return Promise.resolve('aassa')
+//         }).then((res) => {
+//           console.log(res);
+// });
 
-  //数组 方法filter 返回一个满足条件的数组
+//数组 方法filter 返回一个满足条件的数组
 
 // var arr =[{
 //   name:"小王",age:12},
@@ -306,7 +305,7 @@
 //     import('./test1').then((module) => {
 //         module.test1()
 //     })
-      
+
 // }
 
 //可选链操作符
@@ -369,9 +368,9 @@
 
 //对象扩展方法
 // const obj = {
-  // name:['哈利波特','邓布利肯'],
-  // age:[23,113,],
-  // Profession:['法师','校长']
+// name:['哈利波特','邓布利肯'],
+// age:[23,113,],
+// Profession:['法师','校长']
 // }
 // const obj1 = Object.values(obj)//获取对象的所有值，返回一个数组
 // const obj2 = Object.keys(obj)//获取对象的所有键，返回一个数组
@@ -438,7 +437,7 @@
 //export {fun,a}
 //默认暴露
 // export default function(){
-  // console.log("我是默认导出的");
+// console.log("我是默认导出的");
 // }
 
 //1.Object.is 判断两个值是否完全相等
@@ -469,7 +468,7 @@
 
 //变量拼接
 // let string = "我是一个" 
-  
+
 // console.log(`${string}模板`,typeof string);
 
 //解构赋值es6允许按照一定模式从数组和对象中提取，对变量进行赋值，这被称为解构赋值
@@ -492,20 +491,20 @@
 
 //箭头函数 
 //箭头函数不会创建自己的this ，并始终指向上一层
-  //  var name = "教育"
-  //      function fun(){
-  //       console.log(this.name);
-  //     }
+//  var name = "教育"
+//      function fun(){
+//       console.log(this.name);
+//     }
 
-  //     const fun1 = () => {
-  //       console.log(this.name);
-      // }
-      
+//     const fun1 = () => {
+//       console.log(this.name);
+// }
+
 // fun();
 // fun1()
 //箭头函数不能构造实例化对象
 // let fun = (name,age)=>{
-  // console.log(name,age);
+// console.log(name,age);
 // }
 
 // var a = new fun("哈利波特",22)//err
@@ -528,15 +527,15 @@
 //   })
 
 // rest参数 也叫剩余参数 一般放在参数最后面 也可以再函数内对rest参数重新赋值
-  // const fun = (a,...args)=>{
-    // args = 1
-      // console.log(a,args);
-  // }
+// const fun = (a,...args)=>{
+// args = 1
+// console.log(a,args);
+// }
 
-  // fun(1,2,3,5)//1  1
+// fun(1,2,3,5)//1  1
 // const A = [1,2,3]
 // const B = [4,5,6]
-  // 数组合并
+// 数组合并
 // const C = [...A,...B];
 // console.log(C);
 //数组克隆
@@ -631,7 +630,7 @@
 // 过滤器应该被添加在 JavaScript 表达式的尾部，由“管道”符号指示：
 // 使用 在双大括号中使用 
 // {{message | capitalize}}
-{/* <div v-bind:id = 'rawId | formatId'></div> */}
+{ /* <div v-bind:id = 'rawId | formatId'></div> */ }
 
 // 你可以在一个组件的选项中定义本地的过滤器：
 
@@ -662,3 +661,45 @@
 
 //over   
 
+// 面试题
+
+// 考题一延迟加载js的方式
+// async defer
+// async与html同步加载， 谁先加载完成谁先执行
+// defer先执行 html在顺次执行js
+// console.log(true + 1);//2
+// consol.log("name" + true) //nametrue ;字符串有任何数据类型相加会变为字符串
+// console.log(undefined + 1);//NaN
+
+// 基本数据类型： string、 number、 boolean、 undefined、 null Symbol
+// 引用数据类型： object
+// NaN 是一个数值类型 但是一个数字
+
+// console.log(typeof(null)); //object 
+
+// null undefined 区别
+// null 会被隐式的转为0 很不容易发现错误
+// 现有的null后出的undefined 后者是为了填补之前的坑
+// null表示 '无'// 的对象（ 空对象指针） 转换为数值时为0； undefined为 '未定义'转换为数值时为NaN
+
+// == 与 === 区别、
+// == 比较值 === 比较值和数据类型 
+// ==
+// 会别valuof 隐式转换数据的基本类型
+// eg：
+// string == Number || boolen..都会隐式转换
+// console.log(1 == "1"); //true
+// console.log([1, 2] == '1', '2');true
+// ===
+// console.log([1, 2] == '1', '2');false
+// js 的微任务和宏任务
+// js是单线程的语言
+// js 代码执行流程 同步执行完成 ==》在执行事件循环
+// 同步执行完成完成后才会执行时间循环的内容
+// 进入事件循环： 请求、 定时器、 事件、、、
+
+// 事件循环中包含了：【 宏任务、 微任务】
+// 微任务： promis.then
+// 宏任务： setTimeout
+// 要执行宏任务的前提是清空了所有的微任务
+// 流程： 同步-- > 事件循环【 微任务； 宏任务】-- > 微任务-- > 宏任务-- > 微任务...
