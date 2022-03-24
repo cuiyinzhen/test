@@ -345,7 +345,7 @@
 // }
 
 // var grl = new Person() // 实例化类
-// console.log(grl.name = "麻瓜") set
+// console.log(grl.name = "麻瓜");set
 // console.log(grl.name);get
 
 // Sybold 添加描述的description 获取描述
@@ -726,3 +726,23 @@
 // console.log(a); //fun a() {}
 // a = 10;
 // function a() {};
+
+// js 对象
+// 1、 对象是通过new操作符构建出来的，{除了引用的对象} 所以对象之间不相等
+// eg： console.log([1, 2, 3] === [1, 2, 3]) //false
+// var obj = {
+//     a: 1
+// }
+// var obj1 = obj
+// console.log(obj === obj1); //true
+// 对象的key都是字符串类型
+// var a = {
+//     key: 'a'
+// }
+// var b = {}
+// b[a] = "123"
+
+// console.log(b[a]); //[obj,obj]:"123"
+
+// 对象如何查找方法|属性的
+// 先找本身的对象 = 》构造函数中去找 = 》对象自身原型上找 = 》构造函数的原型 = 对象上一次原型查找
