@@ -748,10 +748,35 @@
 // 先找本身的对象 = 》构造函数中去找 = 》对象自身原型上找 = 》构造函数的原型 = 对象上一次原型查找
 
 // js 的作用域 + this指向 + 原型
-function a() {
-    console.log('aaa');
-}
-//二者注意区别
-a() ///aaa
-a //返回函数体本身
+// function a() {
+// console.log('aaa');
+// }
+// 二者注意区别
+// a() ///aaa
+// a //返回函数体本身
 // 2022.3 .24
+// js 判断数组有哪些方法
+// arr = [1, 2, 3]
+// 方式一：  Array.isArray(arr)
+// 方式二：  arr instanceof Array
+// 方式三：原型上找Object.prototype.toSrting.call(arr).indexOf('Array' > -1)
+// 方式四：Array.prototype.isPrototypeOf(arr)
+// 方式五：arr.constructor.toString().indexOf("Array>-1")
+
+// 数组slice 截取数组 arr.slice(1,3)//2,3 并返回一个新的数组
+// splice 插入、删除、替换 会改变原数组 返回删除的元素
+//找出二维数组最大值
+// arr = [
+//     [4, 5, 6],
+//     [1, 2, 3], 
+//     [7, 8, 9],
+//     [1, 1, 2, 4]
+// ]
+
+// function funArr(arr) {
+//     newArr = []
+//     arr.forEach(item => {
+//         newArr.push(Math.max(...item))
+//     });
+//     return newArr;
+//}
