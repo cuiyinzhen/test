@@ -780,3 +780,12 @@
 //     });
 //     return newArr;
 //}
+
+// sort排序
+// var arr = [2, 4, 6, 8, 2, 5, 4, 9, 6]
+
+// arr.stro((a, b) => {
+//     return a - b
+// })
+// console.log(arr);
+// 深拷贝浅拷贝

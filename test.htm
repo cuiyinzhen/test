@@ -81,6 +81,33 @@
         // but.onclick = function() {
         //     console.log(this.id);
         // }.bind(h1s)
+        var arr = [2, 4, 6, 8, 2, 5, 4, 9, 6]
+        var arr1 = arr.sort((a, b) => {
+            return a - b
+        })
+        console.log(arr1);
+        var obj = [{
+            name: '哈利波特',
+            age: 14
+        }, {
+            name: '伏地魔',
+            age: 213
+        }, {
+            name: '邓不肯校长',
+            age: 100
+        }]
+
+        function conter(age) {
+            return function(a, b) {
+                var aval = a[age];
+                var bval = b[age];
+                return aval - bval;
+            }
+        }
+        var obj1 = obj.sort((a, b) => {
+            return a.age - b.age;
+        })
+        console.log(obj1);
     </script>
 </body>
 
