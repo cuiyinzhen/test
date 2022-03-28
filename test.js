@@ -789,3 +789,25 @@
 // })
 // console.log(arr);
 // 深拷贝浅拷贝
+// 浅拷贝：
+// var obj1 = {
+// name: 'cobe',
+// age: 30,
+// height: 198
+// }
+
+// var obj2 = obj1 //浅拷贝 改变其中一个值另一个值也会变
+// var obj4 = Object.assign(obj1) //assign也是浅拷贝
+// 深拷贝
+// var obj5 = JSON.parse(JSON.stringify(obj1)); //改变其中一个值另一个值不会发生变化
+// localStorage, sessionStorage, cookie 的区别
+// 共同点： 在客户端存储数据区别
+// 区别
+// 1、数据存放有效期
+// sessionStorage： 仅在当前浏览器窗口关闭之前有效
+// localStorage： 长期有效， 持久化储存
+// cooke： 可以设置存储的有效期时间，可以设置过期时间（把事件调整到之前的时间就会过期）
+// 2、存储大小的限制
+cookie的存储不能超过4k
+// localStorage和sessionStorage不能超过5m 
+//**** */ 具体根据浏览器储存大小是不同的
