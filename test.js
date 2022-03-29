@@ -808,6 +808,6 @@
 // localStorage： 长期有效， 持久化储存
 // cooke： 可以设置存储的有效期时间，可以设置过期时间（把事件调整到之前的时间就会过期）
 // 2、存储大小的限制
-cookie的存储不能超过4k
+// cookie的存储不能超过4k
 // localStorage和sessionStorage不能超过5m 
 //**** */ 具体根据浏览器储存大小是不同的
