@@ -127,6 +127,33 @@
         // var newcopy = copyObj(obj)
         // newcopy[0].name = 123
         // console.log(newcopy, obj);
+        // 下面这段代码执行的结果
+        // 改写下面这段代码，隔一秒输出一个
+        const list = [1, 2, 3];
+        const square = num => {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        resolve(num * num)
+                    }, 1000)
+                })
+            }
+            // 改写前 一秒后输出1 4 9
+            //原因foreach（）方法是根据数组长度去执行，执行完后在返回 
+            // function test() {
+            //     list.forEach(async x => {
+            //         const res = await square(x);
+            //         console.log(res);
+            //     });
+            // }
+            // test();
+            //改写后
+            // async function test1() {
+            //     for (i = 0; i < list.length; i++) {
+            //         const res = await square(list[i])
+            //         console.log(res);
+            //     }
+            // }
+            // test1()
     </script>
 </body>
 
