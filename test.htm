@@ -129,31 +129,101 @@
         // console.log(newcopy, obj);
         // 下面这段代码执行的结果
         // 改写下面这段代码，隔一秒输出一个
-        const list = [1, 2, 3];
-        const square = num => {
-                return new Promise((resolve, reject) => {
-                    setTimeout(() => {
-                        resolve(num * num)
-                    }, 1000)
-                })
+        // const list = [1, 2, 3];
+        // const square = num => {
+        //         return new Promise((resolve, reject) => {
+        //             setTimeout(() => {
+        //                 resolve(num * num)
+        //             }, 1000)
+        //         })
+        //     }
+        // 改写前 一秒后输出1 4 9
+        //原因foreach（）方法是根据数组长度去执行，执行完后在返回 
+        // function test() {
+        //     list.forEach(async x => {
+        //         const res = await square(x);
+        //         console.log(res);
+        //     });
+        // }
+        // test();
+        //改写后
+        // async function test1() {
+        //     for (i = 0; i < list.length; i++) {
+        //         const res = await square(list[i])
+        //         console.log(res);
+        //     }
+        // }
+        // test1()
+        // function debounce(fun, delay) {
+        //     return function(args) {
+        //         //获取函数的作用域和变量
+        //         let that = this
+        //         let _args = args
+        //             //每次事件被触发，都会清除当前的timeer，然后重写设置超时调用
+        //         clearTimeout(fun.id)
+        //         fun.id = setTimeout(function() {
+        //             fun.call(that, _args)
+        //         }, delay)
+        //     }
+        // }
+        function debounce(fn, delay) {
+            var t = null
+            return function() {
+                console.log(t);
+                if (t) {
+                    clearTimeout(t)
+                }
+                t = setTimeout(() => {
+                            fn.apply(this, arguments)
+                        },
+                        delay) // 简化写法
             }
-            // 改写前 一秒后输出1 4 9
-            //原因foreach（）方法是根据数组长度去执行，执行完后在返回 
-            // function test() {
-            //     list.forEach(async x => {
-            //         const res = await square(x);
-            //         console.log(res);
-            //     });
-            // }
-            // test();
-            //改写后
-            // async function test1() {
-            //     for (i = 0; i < list.length; i++) {
-            //         const res = await square(list[i])
-            //         console.log(res);
-            //     }
-            // }
-            // test1()
+        }
+
+        //第一次生效
+        // function debounce(fn, timer) {
+        //     var t = null;
+        //     return function() {
+        //         console.log(t);
+        //         var first = !t;
+        //         if (t) {
+        //             clearTimeout(t);
+        //         }
+        //         if (first) {
+        //             console.log(arguments);
+        //             fn()
+        //         }
+        //         t = setTimeout(() => {
+        //             t = null;
+        //         }, 1000)
+        //     }
+        // }
+
+        function throttle(fn, delay) {
+            let valid = true
+            console.log('val', valid);
+            console.log(123);
+            return function() {
+                console.log(232);
+                if (!valid) {
+                    //休息时间 暂不接客
+                    return false
+                }
+                // 工作时间，执行函数并且在间隔期内把状态位设为无效
+                valid = false
+                setTimeout(() => {
+                    fn()
+                    valid = true;
+                }, delay)
+            }
+        }
+
+        var objFun = document.getElementById('but');
+
+        function fun(e = 1) {
+            console.log(e);
+        }
+        // objFun.addEventListener('click', test(), false)
     </script>
 </body>
 

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+​
+
+<head>
+    <meta charset="UTF-8">
+    <title>加入防抖</title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+        window.onload = function() {
+            //模拟ajax请求
+            function ajax(content) {
+                console.log('ajax request ' + content)
+            }
+
+            function debounce(fun, delay) {
+                return function(args) {
+                    //获取函数的作用域和变量
+                    let that = this
+                    let _args = args
+                        //每次事件被触发，都会清除当前的timeer，然后重写设置超时调用
+                    clearTimeout(fun.id)
+                    fun.id = setTimeout(function() {
+                        fun.call(that, _args)
+                    }, delay)
+                }
+            }
+            let inputDebounce = document.getElementById('debounce')
+            let debounceAjax = debounce(ajax, 500)
+            inputDebounce.addEventListener('keyup', function(e) {
+                debounceAjax(e.target.value)
+            })
+
+            function throttle(fn, delay) {
+                let valid = true
+                return function() {
+                    console.log(232);
+                    if (!valid) {
+                        //休息时间 暂不接客
+                        return false
+                    }
+                    // 工作时间，执行函数并且在间隔期内把状态位设为无效
+                    valid = false
+                    setTimeout(() => {
+                        fn()
+                        valid = true;
+                    }, delay)
+                }
+            }
+
+            var objFun = document.getElementById('but');
+
+            function fun(e = 1) {
+                console.log(e);
+            }
+            objFun.addEventListener('click', throttle(fun, 1000), false)
+        }
+    </script>
+</head>
+​
+
+<body>
+    <div>
+        2.加入防抖后的输入：
+        <input type="text" name="debounce" id="debounce">
+        <button id="but">123</button>
+    </div>
+</body>
+​
+
+</html>

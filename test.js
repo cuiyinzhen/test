@@ -579,30 +579,28 @@
 
 
 // // 防抖
-// const douc = function(fn,delay){
-//   let val = null //借助闭包
-//   return ()=>{ 
-//       if(val){
-//         clearTimeout(val)
-//       }
-//       val = setTimeout(fn,delay)
-//   }
+// var debounce = function(fun, timer) {
+//     var t = null;
+//     return function() {
+//         if (t) {
+//             clearInterval(t)
+//         }
+//         t = setTimeout(() => {
+//             fun.apply(this, arguments)
+//         }, timer);
+//     }
 // }
 
-// //防抖
-// const debounce = function(fun,delay){
-//   var val = true
-//   return ()=>{
-//     if(!val){
-//      return false
-//       }
+// // //节流
+// var throttle = function(fun, timer) {
+//     var begin = 0;
+//     return function() {
+//         var cur = new Date().getTime()
+//         if (cur - begin > timer) {
+//             fun()
+//             begin = cur
+//         }
 //     }
-//     val = false
-//     setTimeout(() =>{
-//       fun()
-//       val = true
-//     },delay)
-
 // }
 
 // 枚举类型
@@ -705,7 +703,7 @@
 // 流程： 同步-- > 事件循环【 微任务； 宏任务】-- > 微任务-- > 宏任务-- > 微任务...
 
 // js作用域考题
-// js 是没有块级作用域的出了函数
+// js 是没有块级作用域的c除了函数
 // 作用域链：内容部可以访问外部，外部不能访问内部
 // *注意：内部如果有优先访问内部
 // function() {
