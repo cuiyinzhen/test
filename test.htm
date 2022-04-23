@@ -166,19 +166,19 @@
         //         }, delay)
         //     }
         // }
-        function debounce(fn, delay) {
-            var t = null
-            return function() {
-                console.log(t);
-                if (t) {
-                    clearTimeout(t)
-                }
-                t = setTimeout(() => {
-                            fn.apply(this, arguments)
-                        },
-                        delay) // 简化写法
-            }
-        }
+        // function debounce(fn, delay) {
+        //     var t = null
+        //     return function() {
+        //         console.log(t);
+        //         if (t) {
+        //             clearTimeout(t)
+        //         }
+        //         t = setTimeout(() => {
+        //                     fn.apply(this, arguments)
+        //                 },
+        //                 delay) // 简化写法
+        //     }
+        // }
 
         //第一次生效
         // function debounce(fn, timer) {
@@ -199,30 +199,30 @@
         //     }
         // }
 
-        function throttle(fn, delay) {
-            let valid = true
-            console.log('val', valid);
-            console.log(123);
-            return function() {
-                console.log(232);
-                if (!valid) {
-                    //休息时间 暂不接客
-                    return false
-                }
-                // 工作时间，执行函数并且在间隔期内把状态位设为无效
-                valid = false
-                setTimeout(() => {
-                    fn()
-                    valid = true;
-                }, delay)
-            }
-        }
+        // function throttle(fn, delay) {
+        //     let valid = true
+        //     console.log('val', valid);
+        //     console.log(123);
+        //     return function() {
+        //         console.log(232);
+        //         if (!valid) {
+        //             //休息时间 暂不接客
+        //             return false
+        //         }
+        //         // 工作时间，执行函数并且在间隔期内把状态位设为无效
+        //         valid = false
+        //         setTimeout(() => {
+        //             fn()
+        //             valid = true;
+        //         }, delay)
+        //     }
+        // }
 
-        var objFun = document.getElementById('but');
+        // var objFun = document.getElementById('but');
 
-        function fun(e = 1) {
-            console.log(e);
-        }
+        // function fun(e = 1) {
+        //     console.log(e);
+        // }
         // objFun.addEventListener('click', test(), false)
     </script>
 </body>

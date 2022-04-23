@@ -809,3 +809,48 @@
 // cookie的存储不能超过4k
 // localStorage和sessionStorage不能超过5m 
 //**** */ 具体根据浏览器储存大小是不同的
+
+// 闭包面试题
+// var foo = function(...args) {} //实现函数体
+// var f1 = foo(1, 2, 3);
+// f1.getvalue(); //6
+
+// var f1 = foo(1)(2, 3);
+// f2.getvalue(); //6
+
+// var f3 = foo(1)(2)(3)(4);
+// f3.getvalue(); //10
+
+// var foo = function(...args) {
+//     if (!Array.isArray(foo.arr)) {
+//         foo.arr = [];
+//     }
+//     foo.arr.push(...args);
+//     return foo;
+// }
+// Function.prototype.getValue = () => {
+//         return foo.arr.reduce((pre, cur) => {
+//             return pre + cur
+//         }, 0)
+//     }
+//     // var f1 = foo(1)(2, 3);
+//     // f1.getValue()
+//     // var f2 = foo(1, 2, 3);
+//     // f2.getValue()
+// var f3 = foo(1)(2)(3)(4);
+// f3.getValue()
+// 方法二 闭包
+// var foo = function(...args) {
+// const fun = function() {
+//     var args1 = Array.prototype.slice.call(arguments);
+//     args = [...args1, ...args]
+//     return foo(...args);
+// };
+// const fun = (...args1) => foo(...[...args, ...args1])
+// fun.getValue = () => {
+// return args.reduce((pre, cur) => pre + cur, 0)
+// }
+// return fun
+// }
+// var f3 = foo(1)(2)(3)(4);
+// f3.getValue()
