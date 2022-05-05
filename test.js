@@ -370,7 +370,7 @@
 // const obj = {
 // name:['哈利波特','邓布利肯'],
 // age:[23,113,],
-// Profession:['法师','校长']
+// Profession:[' ','校长']
 // }
 // const obj1 = Object.values(obj)//获取对象的所有值，返回一个数组
 // const obj2 = Object.keys(obj)//获取对象的所有键，返回一个数组
@@ -846,6 +846,7 @@
 //     args = [...args1, ...args]
 //     return foo(...args);
 // };
+//es6语法简写
 // const fun = (...args1) => foo(...[...args, ...args1])
 // fun.getValue = () => {
 // return args.reduce((pre, cur) => pre + cur, 0)
@@ -854,3 +855,67 @@
 // }
 // var f3 = foo(1)(2)(3)(4);
 // f3.getValue()
+// reduce(Math.pow)Math.pow(m,n) 求m的n次方指数
+// reduce 如何数组为空， 且没有提供初始值， 就会抛出异常
+// 如果数组只有一个元素， reduce 会直接返回这个元素并不执行提供的函数
+// Array.from() 把一个伪数组转换为一个真的数组
+
+
+function fun(n) {
+    console.log(
+        Array.from({ length: n }).map((v, i) => i++)
+
+    );
+}
+fun(10)
+var arr = []
+
+function slee() {
+    var that = this
+    const fun = (() => {
+        console.log('fun');
+        return function() {
+            console.log("1213");
+            that.next();
+        }
+    })()
+    this.arr.push(fun)
+}
+
+function next() {
+    console.log("new");
+}
+// console.log(
+//     slee
+// );
+slee()
+arr[0]() // arr[0]()
+
+
+//Object 与Map区别
+// 1、 Object键必须是字符串或者symbol， 如果不是将会通过valueof 方法转换类型， Map 的键值可以是任意的
+
+// 2、 键的顺序是无序的对于大于0的整数， 会按照大小进行排序对于小数或负数会转换为字符串
+
+// 对于string类型, 会按照定义的顺序进行输出, 对于symbol类型会直接过滤d掉, 不会输出如果想要输出symbol类型的属性
+// 通过Object.getOwnPropertySymbols() 方法输出.
+// Map的key是有序的会按照定义的顺序返回
+
+// 4、 键值对size - Object 只能通过手动计算， 通过， Object.keys（） 方法， 或通过for...in 循环统计
+// Map有size（） 方法直接统计
+
+// 5、 Object 通过.的方式访问或者[] Map set方法如果属性存在就修改，不存在就添加 Map通过get 方法获取
+// Map判断属性是否存在有 has() 方法存在返回true 不存在返回false， 获取所有属性名通过keys() 方法， 清空通过clear() 方法
+
+// 6、 Object 方法不能通过for（ of） 方法迭代 Map可以
+// 例:
+//     for (let [key, valu] of map.entries()) {
+//         console.log(key, valu);
+//     }
+// entries() 方法获取Map所有的key 和valu
+
+// 7、 Object可以通过JSON.stringify() 进行序列化操作 Map不行 可以先通过Array.form() 专换为数组在进行序列化结果是得到一个二维数组以字符串的形式展示
+
+// 个各自使用场景，
+// Object 1、 仅做数据存储， 并属性仅为字符串或Symbol 2、 需要进行序列化转换为json传输时 3、 当做一个对象的实例， 需要保留自己的属性方法时
+// Map 1、 会频繁更新删除键值对是 2、 存储大量数据时， 尤其是key类型未知的情况下 3、 需要频繁进行迭代处理

@@ -17,3 +17,4 @@
 // stylus 样式穿透
 // 父元素 >>> 子元素
 // 也可以 父元素 / depp / 子元素
+// deep算法   spabbdom
